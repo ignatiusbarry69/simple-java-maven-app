@@ -1,5 +1,5 @@
 node {
-    docker.image('maven:3.8.6-jdk-17-slim').inside('-p 3001:3000') {
+    docker.image('openjdk:17.0.2-slim').inside('-p 3001:3000') {
 
         stage('Build') {
             echo 'Building the project...'
