@@ -12,9 +12,12 @@ node {
             echo 'Running tests...'
             sh 'mvn test'
         }
+        stage('Manual Approval') {
+            input message: 'Lanjutkan ke tahap Deploy?'
+        }
         stage('Deploy') {
             echo 'Deploying the project...'
-            sh 'chmod +x jenkins/scripts/deliver.sh'
+            // sh 'chmod +x jenkins/scripts/deliver.sh'
             sh './jenkins/scripts/deliver.sh'
             sleep 60
         }
