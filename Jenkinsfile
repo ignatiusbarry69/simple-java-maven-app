@@ -16,7 +16,7 @@ node {
             echo 'Deploying the project...'
             sh 'chmod +x jenkins/scripts/deliver.sh'
             sh './jenkins/scripts/deliver.sh'
-            sleep 1
+            sleep 60
         }
     }
 }
